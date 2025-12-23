@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Sky Blue Theme - FinSky */
+    --background: 200 80% 96%;
+    --foreground: 210 40% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 20%;
+
+    /* Sky Blue Primary */
+    --primary: 200 92% 76%;
+    --primary-foreground: 210 40% 15%;
+
+    /* Soft Cloud White */
+    --secondary: 200 30% 98%;
+    --secondary-foreground: 210 40% 20%;
+
+    /* Muted Sky */
+    --muted: 200 40% 94%;
+    --muted-foreground: 210 20% 45%;
+
+    /* Accent - Sunshine Yellow */
+    --accent: 45 100% 70%;
+    --accent-foreground: 45 80% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 40% 88%;
+    --input: 200 40% 90%;
+    --ring: 200 92% 76%;
+
+    --radius: 1rem;
+
+    /* Custom FinSky Colors */
+    --sky-light: 200 80% 96%;
+    --sky-primary: 200 92% 76%;
+    --sky-deep: 210 70% 55%;
+    --cloud-white: 0 0% 100%;
+    --sunshine: 45 100% 70%;
+    --sunset-orange: 25 95% 65%;
+    --twilight: 220 60% 40%;
+
+    /* Gradients */
+    --gradient-sky: linear-gradient(180deg, hsl(200 92% 85%) 0%, hsl(200 80% 96%) 50%, hsl(0 0% 100%) 100%);
+    --gradient-sunset: linear-gradient(180deg, hsl(200 70% 75%) 0%, hsl(25 80% 85%) 50%, hsl(45 100% 90%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100% / 0.9) 0%, hsl(200 50% 98% / 0.8) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(200 50% 50% / 0.1);
+    --shadow-glow: 0 0 30px hsl(200 92% 76% / 0.3);
+    --shadow-card: 0 8px 32px hsl(200 50% 40% / 0.12);
+    --shadow-float: 0 20px 40px hsl(200 50% 40% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 50% 10%;
+    --foreground: 200 40% 95%;
+
+    --card: 220 50% 15%;
+    --card-foreground: 200 40% 95%;
+
+    --popover: 220 50% 15%;
+    --popover-foreground: 200 40% 95%;
+
+    --primary: 200 92% 70%;
+    --primary-foreground: 220 50% 10%;
+
+    --secondary: 220 40% 20%;
+    --secondary-foreground: 200 40% 95%;
+
+    --muted: 220 40% 18%;
+    --muted-foreground: 200 30% 65%;
+
+    --accent: 45 100% 65%;
+    --accent-foreground: 45 80% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 40% 25%;
+    --input: 220 40% 25%;
+    --ring: 200 92% 70%;
+
+    --sky-light: 220 50% 15%;
+    --sky-primary: 200 70% 50%;
+    --sky-deep: 210 60% 35%;
+    --cloud-white: 220 40% 25%;
+    --sunshine: 45 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-lg border border-border/50 rounded-2xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-nav {
+    @apply bg-card/60 backdrop-blur-xl border-b border-border/30;
+  }
+
+  .floating-icon {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .floating-icon-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: -2s;
+  }
+
+  .floating-icon-slow {
+    animation: float 8s ease-in-out infinite;
+    animation-delay: -4s;
+  }
+
+  .cloud-move {
+    animation: cloudMove 30s linear infinite;
+  }
+
+  .cloud-move-slow {
+    animation: cloudMove 45s linear infinite;
+    animation-delay: -15s;
+  }
+
+  .cloud-move-fast {
+    animation: cloudMove 20s linear infinite;
+    animation-delay: -5s;
+  }
+
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .bounce-soft {
+    animation: bounceSoft 2s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-gradient-sky {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--sky-deep)) 0%, hsl(var(--sky-primary)) 100%);
+  }
+
+  .bg-sky-gradient {
+    background: var(--gradient-sky);
+  }
+
+  .bg-sunset-gradient {
+    background: var(--gradient-sunset);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+}
+
+@keyframes cloudMove {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--sunshine) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--sunshine) / 0.6);
+  }
+}
+
+@keyframes bounceSoft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
