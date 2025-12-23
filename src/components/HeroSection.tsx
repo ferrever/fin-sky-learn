@@ -4,6 +4,14 @@ import { Play, ArrowRight, Sparkles } from 'lucide-react';
 import FloatingIcons from './FloatingIcons';
 
 const HeroSection = () => {
+  // Fungsi untuk scroll halus ke bagian materi
+  const scrollToMateri = () => {
+    const element = document.getElementById('materi-belajar');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 overflow-hidden">
       <FloatingIcons />
@@ -33,14 +41,17 @@ const HeroSection = () => {
 
          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-300">
-            <a href="#materi-belajar">
-              <Button variant="hero" size="xl" className="group">
-                Mulai Belajar Sekarang
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
+            {/* Menggunakan Button dengan fungsi onClick untuk menghindari 404 */}
+            <Button 
+              variant="hero" 
+              size="xl" 
+              className="group"
+              onClick={scrollToMateri}
+            >
+              Mulai Belajar Sekarang
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </div>
-
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-6 mt-16 animate-fade-in-up animation-delay-400">
