@@ -1,19 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, BookOpen, Video, BarChart3, HelpCircle } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  // Detect scroll for sticky effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Menu items with anchor IDs matching section IDs
   const menuItems = [
-    { name: 'Artikel Fintech', icon: BookOpen, href: '#artikel' },
-    { name: 'Video Edukasi', icon: Video, href: '#video' },
+    { name: 'Artikel Fintech', icon: BookOpen, href: '#artikel-fintech' },
+    { name: 'Video Edukasi', icon: Video, href: '#video-edukasi' },
     { name: 'Infografis', icon: BarChart3, href: '#infografis' },
-    { name: 'Kuis Interaktif', icon: HelpCircle, href: '#kuis' },
+    { name: 'Kuis Interaktif', icon: HelpCircle, href: '#kuis-interaktif' },
   ];
 
+  // Smooth scroll to section
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      const offsetTop = element.offsetTop - 80; // Account for navbar height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      });
+    }
+    setIsOpen(false);
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'glass-nav shadow-lg backdrop-blur-lg' : 'glass-nav'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
@@ -33,6 +63,7 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="flex items-center gap-2 px-4 py-2 rounded-xl text-foreground/80 hover:text-foreground hover:bg-primary/10 transition-all duration-300 font-medium"
               >
                 <item.icon className="w-4 h-4" />
@@ -65,8 +96,8 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground/80 hover:text-foreground hover:bg-primary/10 transition-all duration-300"
-                  onClick={() => setIsOpen(false)}
                 >
                   <item.icon className="w-5 h-5" />
                   {item.name}

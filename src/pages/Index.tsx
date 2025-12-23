@@ -4,6 +4,10 @@ import CloudBackground from '@/components/CloudBackground';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ContentSection from '@/components/ContentSection';
+import ArticleSection from '@/components/ArticleSection';
+import VideoSection from '@/components/VideoSection';
+import InfografisSection from '@/components/InfografisSection';
+import QuizSection from '@/components/QuizSection';
 import FinoMascot from '@/components/FinoMascot';
 import Footer from '@/components/Footer';
 
@@ -26,6 +30,12 @@ const Index = () => {
         <main>
           <HeroSection />
           <ContentSection />
+          
+          {/* Content Sections - Setiap section memiliki ID untuk anchor navigation */}
+          <ArticleSection />
+          <VideoSection />
+          <InfografisSection />
+          <QuizSection />
         </main>
 
         <Footer />
