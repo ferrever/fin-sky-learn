@@ -15,7 +15,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Menu items with anchor IDs matching section IDs
+  // Menu items
   const menuItems = [
     { name: 'Artikel Fintech', icon: BookOpen, href: '#artikel-fintech' },
     { name: 'Video Edukasi', icon: Video, href: '#video-edukasi' },
@@ -23,19 +23,23 @@ const Navbar = () => {
     { name: 'Kuis Interaktif', icon: HelpCircle, href: '#kuis-interaktif' },
   ];
 
-  // Smooth scroll to section
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
+  // Fungsi Scroll Umum
+  const scrollToId = (id: string) => {
+    const element = document.getElementById(id);
     if (element) {
-      const offsetTop = element.offsetTop - 80; // Account for navbar height
+      const offsetTop = element.offsetTop - 80;
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth',
       });
     }
     setIsOpen(false);
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    scrollToId(targetId);
   };
 
   return (
@@ -46,8 +50,11 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
+          {/* Logo - Diubah agar tidak 404 */}
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+            className="flex items-center gap-2 group outline-none"
+          >
             <div className="relative w-10 h-10 md:w-12 md:h-12">
               <div className="absolute inset-0 bg-sunshine rounded-xl transform rotate-6 group-hover:rotate-12 transition-transform duration-300" />
               <div className="absolute inset-0 bg-sky-primary rounded-xl flex items-center justify-center">
@@ -55,7 +62,7 @@ const Navbar = () => {
               </div>
             </div>
             <span className="text-xl md:text-2xl font-bold text-gradient-sky">FinSky</span>
-          </a>
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-1">
@@ -72,22 +79,16 @@ const Navbar = () => {
             ))}
           </div>
 
-         {/* CTA Button */}
+          {/* CTA Button Desktop */}
           <div className="hidden md:block">
             <Button 
               variant="sunshine" 
               size="lg"
-              onClick={() => {
-                const element = document.getElementById('materi-belajar');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
+              onClick={() => scrollToId('materi-belajar')}
             >
               Mulai Belajar
             </Button>
           </div>
-
 
           {/* Mobile Menu Button */}
           <button
@@ -113,8 +114,14 @@ const Navbar = () => {
                   {item.name}
                 </a>
               ))}
-              <div className="pt-2">
-                <Button variant="sunshine" className="w-full" size="lg">
+              <div className="pt-2 px-4">
+                {/* CTA Button Mobile - SEKARANG SUDAH DIBERI onClick */}
+                <Button 
+                  variant="sunshine" 
+                  className="w-full" 
+                  size="lg"
+                  onClick={() => scrollToId('materi-belajar')}
+                >
                   Mulai Belajar
                 </Button>
               </div>

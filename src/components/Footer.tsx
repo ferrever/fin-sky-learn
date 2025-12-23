@@ -12,6 +12,18 @@ import {
 } from 'lucide-react';
 
 const Footer = () => {
+  // Fungsi untuk scroll halus
+  const scrollToId = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offsetTop = element.offsetTop - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Twitter, href: '#', label: 'Twitter' },
@@ -20,12 +32,13 @@ const Footer = () => {
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
   ];
 
+  // Mapping nama menu ke ID section yang sesuai
   const quickLinks = [
-    { name: 'Tentang Kami', href: '#about' },
-    { name: 'Artikel Fintech', href: '#artikel' },
-    { name: 'Video Edukasi', href: '#video' },
-    { name: 'Kuis Interaktif', href: '#kuis' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'Tentang Kami', target: 'hero-section' }, // Sesuaikan ID jika ada section hero
+    { name: 'Artikel Fintech', target: 'artikel-fintech' },
+    { name: 'Video Edukasi', target: 'video-edukasi' },
+    { name: 'Kuis Interaktif', target: 'kuis-interaktif' },
+    { name: 'FAQ', target: 'faq-section' }, // Sesuaikan ID jika ada section FAQ
   ];
 
   const resourceLinks = [
@@ -51,15 +64,18 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <a href="#" className="flex items-center gap-2 mb-4">
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="flex items-center gap-2 mb-4 outline-none group"
+            >
               <div className="relative w-10 h-10">
-                <div className="absolute inset-0 bg-sunshine rounded-xl transform rotate-6" />
+                <div className="absolute inset-0 bg-sunshine rounded-xl transform rotate-6 group-hover:rotate-12 transition-transform" />
                 <div className="absolute inset-0 bg-sky-primary rounded-xl flex items-center justify-center">
                   <span className="text-xl font-bold text-primary-foreground">F</span>
                 </div>
               </div>
               <span className="text-2xl font-bold text-twilight">FinSky</span>
-            </a>
+            </button>
             <p className="text-twilight/80 text-sm mb-6">
               Platform edukasi fintech terdepan untuk meningkatkan literasi keuangan digital masyarakat Indonesia.
             </p>
@@ -78,18 +94,18 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links - UPDATED TO USE SCROLL */}
           <div>
             <h4 className="font-bold text-twilight mb-4">Menu Cepat</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-twilight/80 hover:text-twilight hover:pl-2 transition-all duration-300 text-sm"
+                  <button
+                    onClick={() => scrollToId(link.target)}
+                    className="text-twilight/80 hover:text-twilight hover:pl-2 transition-all duration-300 text-sm block text-left w-full"
                   >
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
