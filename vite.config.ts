@@ -3,9 +3,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/fin-sky-learn/", // TAMBAHKAN BARIS INI
+  base: "/fin-sky-learn/", // Pastikan ini ada dan ejaannya sama dengan nama repo
   server: {
     host: "::",
     port: 8080,
