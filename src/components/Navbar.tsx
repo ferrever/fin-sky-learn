@@ -6,125 +6,63 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Detect scroll for sticky effect
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Menu items
   const menuItems = [
-    { name: 'Artikel Fintech', icon: BookOpen, href: '#artikel-fintech' },
-    { name: 'Video Edukasi', icon: Video, href: '#video-edukasi' },
-    { name: 'Infografis', icon: BarChart3, href: '#infografis' },
-    { name: 'Kuis Interaktif', icon: HelpCircle, href: '#kuis-interaktif' },
+    { name: 'Artikel Fintech', icon: BookOpen, target: 'artikel-fintech' },
+    { name: 'Video Edukasi', icon: Video, target: 'video-edukasi' },
+    { name: 'Infografis', icon: BarChart3, target: 'infografis' },
+    { name: 'Kuis Interaktif', icon: HelpCircle, target: 'kuis-interaktif' },
   ];
 
-  // Fungsi Scroll Umum
   const scrollToId = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       const offsetTop = element.offsetTop - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth',
-      });
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
     }
     setIsOpen(false);
   };
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetId = href.replace('#', '');
-    scrollToId(targetId);
-  };
-
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-nav shadow-lg backdrop-blur-lg' : 'glass-nav'
-      }`}
-    >
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-nav shadow-lg' : 'glass-nav'}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo - Diubah agar tidak 404 */}
-          <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
-            className="flex items-center gap-2 group outline-none"
-          >
-            <div className="relative w-10 h-10 md:w-12 md:h-12">
-              <div className="absolute inset-0 bg-sunshine rounded-xl transform rotate-6 group-hover:rotate-12 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-sky-primary rounded-xl flex items-center justify-center">
-                <span className="text-xl md:text-2xl font-bold text-primary-foreground">F</span>
-              </div>
-            </div>
-            <span className="text-xl md:text-2xl font-bold text-gradient-sky">FinSky</span>
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-2 outline-none group">
+            <div className="relative w-10 h-10 bg-sky-primary rounded-xl flex items-center justify-center font-bold text-white">F</div>
+            <span className="text-xl font-bold text-gradient-sky">FinSky</span>
           </button>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-1">
             {menuItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl text-foreground/80 hover:text-foreground hover:bg-primary/10 transition-all duration-300 font-medium"
-              >
-                <item.icon className="w-4 h-4" />
-                {item.name}
-              </a>
+              <button key={item.name} onClick={() => scrollToId(item.target)} className="flex items-center gap-2 px-4 py-2 rounded-xl text-foreground/80 hover:bg-primary/10 font-medium">
+                <item.icon className="w-4 h-4" /> {item.name}
+              </button>
             ))}
           </div>
 
-          {/* CTA Button Desktop */}
           <div className="hidden md:block">
-            <Button 
-              variant="sunshine" 
-              size="lg"
-              onClick={() => scrollToId('materi-belajar')}
-            >
-              Mulai Belajar
-            </Button>
+            <Button variant="sunshine" size="lg" onClick={() => scrollToId('materi-belajar')}>Mulai Belajar</Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-xl hover:bg-primary/10 transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X /> : <Menu />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border/30 animate-fade-in-up">
-            <div className="flex flex-col gap-2">
-              {menuItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground/80 hover:text-foreground hover:bg-primary/10 transition-all duration-300"
-                >
-                  <item.icon className="w-5 h-5" />
-                  {item.name}
-                </a>
-              ))}
-              <div className="pt-2 px-4">
-                {/* CTA Button Mobile - SEKARANG SUDAH DIBERI onClick */}
-                <Button 
-                  variant="sunshine" 
-                  className="w-full" 
-                  size="lg"
-                  onClick={() => scrollToId('materi-belajar')}
-                >
-                  Mulai Belajar
-                </Button>
-              </div>
+          <div className="md:hidden py-4 border-t">
+            {menuItems.map((item) => (
+              <button key={item.name} onClick={() => scrollToId(item.target)} className="flex items-center gap-3 w-full px-4 py-3 text-left">
+                <item.icon className="w-5 h-5" /> {item.name}
+              </button>
+            ))}
+            <div className="px-4 pt-2">
+              <Button variant="sunshine" className="w-full" onClick={() => scrollToId('materi-belajar')}>Mulai Belajar</Button>
             </div>
           </div>
         )}
