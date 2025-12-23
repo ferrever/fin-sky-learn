@@ -4,6 +4,19 @@ import ContentCard from './ContentCard';
 import ProgressBar from './ProgressBar';
 
 const ContentSection = () => {
+  // Fungsi untuk scroll halus
+  const scrollToId = (id: string) => {
+    const targetId = id.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      const offsetTop = element.offsetTop - 80;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   const contentCards = [
     {
       title: 'Artikel Fintech',
@@ -12,7 +25,7 @@ const ContentSection = () => {
       icon: BookOpen,
       iconBg: 'bg-sky-deep',
       count: '85+ Artikel',
-      href: '#artikel-fintech',
+      targetId: 'artikel-fintech', // Ganti href jadi targetId
     },
     {
       title: 'Video Edukasi',
@@ -21,7 +34,7 @@ const ContentSection = () => {
       icon: Video,
       iconBg: 'bg-sunset',
       count: '50+ Video',
-      href: '#video-edukasi',
+      targetId: 'video-edukasi',
     },
     {
       title: 'Infografis',
@@ -30,7 +43,7 @@ const ContentSection = () => {
       icon: BarChart3,
       iconBg: 'bg-sky-primary',
       count: '40+ Grafis',
-      href: '#infografis',
+      targetId: 'infografis',
     },
     {
       title: 'Kuis Interaktif',
@@ -39,7 +52,7 @@ const ContentSection = () => {
       icon: HelpCircle,
       iconBg: 'bg-sunshine',
       count: '25+ Kuis',
-      href: '#kuis-interaktif',
+      targetId: 'kuis-interaktif',
     },
   ];
 
@@ -49,7 +62,6 @@ const ContentSection = () => {
       className="py-16 md:py-24 bg-card relative z-10"
     >
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-sm font-semibold text-sky-deep uppercase tracking-wider">
             Materi Pembelajaran
@@ -62,12 +74,10 @@ const ContentSection = () => {
           </p>
         </div>
 
-        {/* Progress Bar */}
         <div className="max-w-xl mx-auto mb-12">
           <ProgressBar progress={65} level={5} xp={1350} maxXp={2000} />
         </div>
 
-        {/* Content Cards Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {contentCards.map((card, index) => (
             <div
@@ -75,7 +85,11 @@ const ContentSection = () => {
               className="animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <ContentCard {...card} />
+              {/* Tambahkan properti onClick yang memanggil fungsi scroll */}
+              <ContentCard 
+                {...card} 
+                onClick={() => scrollToId(card.targetId)} 
+              />
             </div>
           ))}
         </div>
