@@ -72,13 +72,20 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
+         {/* CTA Button */}
           <div className="hidden md:block">
-            <a href="#materi-belajar">
-              <Button variant="sunshine" size="lg">
-                Mulai Belajar
-              </Button>
-            </a>
+            <Button 
+              variant="sunshine" 
+              size="lg"
+              onClick={() => {
+                const element = document.getElementById('materi-belajar');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Mulai Belajar
+            </Button>
           </div>
 
 
