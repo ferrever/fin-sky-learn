@@ -9,7 +9,7 @@ import { Video, Play } from 'lucide-react';
 const edukasiVideos = [
   {
     title: "Belajar Dasar Fintech",
-    youtubeUrl: "https://youtu.be/2kfmi_U2sVI?si=CPPF8sUgfuGgRzoB",
+    youtubeUrl: "https://youtu.be/YUffxvvLfgM?si=q0dW1_7vnbjR7VPf",
   },
 ];
 
