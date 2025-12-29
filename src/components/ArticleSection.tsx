@@ -1,30 +1,26 @@
 import React from 'react';
 import { BookOpen, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
+import { useNavigate } from 'react-router-dom'; // 1. Import useNavigate
 
-// =====================================================
-// EDIT DATA ARTIKEL DI SINI
-// Ganti title, description, dan url sesuai kebutuhan
-// =====================================================
 const fintechArticles = [
   {
-    title: "Apa Itu Fintech dan Bagaimana Cara Kerjanya?",
-    description: "Pelajari dasar-dasar financial technology dan bagaimana fintech mengubah cara kita mengelola keuangan sehari-hari.",
-    url: "https://link-artikel-1.com"
+    title: "Literasi Fintech di Era Digital: Kunci Cerdas Mengelola Keuangan Modern",
+    description: "Pelajari bagaimana fintech mengubah cara kita mengelola keuangan dan mengapa literasi digital sangat penting.",
   },
   {
-    title: "5 Tips Aman Bertransaksi Digital",
-    description: "Panduan lengkap untuk menjaga keamanan transaksi online dan melindungi data keuangan Anda.",
-    url: "https://link-artikel-2.com"
+    title: "5 Tips Aman Bertransaksi Digital agar Terhindar dari Risiko Fintech",
+    description: "Panduan praktis menjaga keamanan akun, data pribadi, dan dana Anda saat bertransaksi online.",
   },
   {
     title: "Mengenal Investasi Digital untuk Pemula",
-    description: "Langkah awal memulai investasi di era digital, dari reksa dana online hingga saham.",
-    url: "https://link-artikel-3.com"
+    description: "Langkah awal memulai investasi aman di era digital, mulai dari reksa dana hingga emas digital.",
   },
 ];
 
 const ArticleSection = () => {
+  const navigate = useNavigate(); // 2. Inisialisasi navigate
+
   return (
     <section id="artikel-fintech" className="py-16 md:py-24 bg-background relative z-10">
       <div className="container mx-auto px-4">
@@ -42,7 +38,6 @@ const ArticleSection = () => {
           </p>
         </div>
 
-        {/* Article Cards Grid - 3 columns desktop, 1 column mobile */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {fintechArticles.map((article, index) => (
             <article
@@ -64,7 +59,8 @@ const ArticleSection = () => {
                     variant="outline"
                     size="sm"
                     className="group/btn"
-                    onClick={() => window.open(article.url, '_blank')}
+                    // 3. Ubah window.open menjadi navigate ke rute internal
+                    onClick={() => navigate(`/artikel/${index}`)}
                   >
                     Baca Artikel
                     <ExternalLink className="w-3 h-3 ml-2 group-hover/btn:translate-x-0.5 transition-transform" />
