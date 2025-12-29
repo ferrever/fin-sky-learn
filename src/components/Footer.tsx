@@ -34,11 +34,10 @@ const Footer = () => {
 
   // Mapping nama menu ke ID section yang sesuai
   const quickLinks = [
-    { name: 'Tentang Kami', target: 'hero-section' }, // Sesuaikan ID jika ada section hero
+    { name: 'Konten', target: 'contentcard' },
     { name: 'Artikel Fintech', target: 'artikel-fintech' },
     { name: 'Video Edukasi', target: 'video-edukasi' },
     { name: 'Kuis Interaktif', target: 'kuis-interaktif' },
-    { name: 'FAQ', target: 'faq-section' }, // Sesuaikan ID jika ada section FAQ
   ];
 
   const resourceLinks = [
