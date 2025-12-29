@@ -1,7 +1,6 @@
 import React from 'react';
 import { BookOpen, Video, BarChart3, HelpCircle } from 'lucide-react';
 import ContentCard from './ContentCard';
-import ProgressBar from './ProgressBar';
 
 const ContentSection = () => {
   // Fungsi untuk scroll halus
@@ -74,10 +73,7 @@ const ContentSection = () => {
           </p>
         </div>
 
-        <div className="max-w-xl mx-auto mb-12">
-          <ProgressBar progress={65} level={5} xp={1350} maxXp={2000} />
-        </div>
-
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {contentCards.map((card, index) => (
             <div
