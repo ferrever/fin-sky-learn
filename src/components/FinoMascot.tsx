@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Lightbulb, Sparkles } from 'lucide-react';
 
-// 1. Solusi Alternatif: Import file gambar secara langsung
-import mascotImage from '../assets/favicon.png';
-
 const tips = [
   "Mulai investasi sedini mungkin! Waktu adalah teman terbaikmu dalam menumbuhkan kekayaan.",
   "Sisihkan 20% penghasilan untuk tabungan darurat minimal 6 bulan pengeluaran.",
@@ -39,7 +36,7 @@ const FinoMascot = () => {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {/* Tip bubble */}
       {isOpen && (
-        <div className="animate-slide-in-right glass-card p-4 max-w-xs shadow-float relative">
+        <div className="animate-slide-in-right glass-card p-4 max-w-xs shadow-float">
           <button
             onClick={() => setIsOpen(false)}
             className="absolute top-2 right-2 p-1 rounded-full hover:bg-muted transition-colors"
@@ -61,21 +58,34 @@ const FinoMascot = () => {
       {/* Mascot button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="group relative w-20 h-20 md:w-24 md:h-24 bounce-soft transition-transform hover:scale-110"
+        className="group relative w-16 h-16 md:w-20 md:h-20 bounce-soft"
       >
-        {/* 2. Menggunakan variabel hasil import (mascotImage) */}
-        <img 
-          src={mascotImage} 
-          alt="Fino Mascot"
-          className="w-full h-full object-contain drop-shadow-md"
-        />
+        {/* Cloud body */}
+        <div className="absolute inset-0 bg-card rounded-full shadow-card flex items-center justify-center border-4 border-sky-primary/30 group-hover:border-sunshine transition-colors duration-300">
+          {/* Face */}
+          <div className="relative w-full h-full">
+            {/* Eyes */}
+            <div className="absolute top-1/3 left-1/4 w-2 h-2 bg-foreground rounded-full" />
+            <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-foreground rounded-full" />
+            {/* Smile */}
+            <div className="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 w-6 h-3 border-b-2 border-foreground rounded-b-full" />
+            {/* Blush */}
+            <div className="absolute bottom-[38%] left-[18%] w-2.5 h-1.5 bg-sunset/40 rounded-full" />
+            <div className="absolute bottom-[38%] right-[18%] w-2.5 h-1.5 bg-sunset/40 rounded-full" />
+          </div>
+        </div>
 
-        {/* Indikator kilauan (opsional) */}
+        {/* Sparkle indicator */}
         {!isOpen && (
-          <div className="absolute -top-1 -right-1 w-6 h-6 bg-sunshine rounded-full flex items-center justify-center pulse-glow shadow-lg">
+          <div className="absolute -top-1 -right-1 w-6 h-6 bg-sunshine rounded-full flex items-center justify-center pulse-glow">
             <Sparkles className="w-3 h-3 text-accent-foreground" />
           </div>
         )}
+
+        {/* Cloud puffs */}
+        <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-3 bg-card rounded-full shadow-sm" />
+        <div className="absolute -bottom-1 left-0 w-3 h-2 bg-card rounded-full shadow-sm" />
+        <div className="absolute -bottom-1 right-0 w-3 h-2 bg-card rounded-full shadow-sm" />
       </button>
 
       {/* Name tag */}
