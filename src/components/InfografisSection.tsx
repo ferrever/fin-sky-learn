@@ -2,21 +2,21 @@ import React from 'react';
 import { BarChart3, ExternalLink, FileText } from 'lucide-react';
 import { Button } from './ui/button';
 
-// =====================================================
-// EDIT DATA INFOGRAFIS/SLIDE DI SINI
-// Ganti title, description, dan url sesuai kebutuhan
-// URL bisa berupa link Google Slides, PPT, atau PDF
-// =====================================================
+// Import logo IASC dari folder assets
+import iascLogo from '../assets/IASC.png'; 
+
 const infografisItems = [
   {
     title: "Technologi Finansial Untuk Pembayaran",
     description: "Pemahaman dasar mengenai teknologi finansial untuk pembayaran di Indonesia.",
-    url: "https://https://www.canva.com/design/DAG846HTvcU/G6ePIVyeczMFbcUkwc5jdg/view?utm_content=DAG846HTvcU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2fd6d55c62"
+    // Link sudah diperbaiki (menghapus double https)
+    url: "https://www.canva.com/design/DAG846HTvcU/G6ePIVyeczMFbcUkwc5jdg/view?utm_content=DAG846HTvcU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2fd6d55c62"
   },
   {
     title: "Pengenalan Indonesia Anti-Scam Centre (IASC)",
     description: "IASC adalah pusat koordinasi nasional yang menangani laporan penipuan transaksi keuangan secara cepat dan terintegrasi.",
-    url: "https://www.canva.com/design/DAG84whh_6Y/cdp-xDLmqDULwhEwbjcD7g/view?utm_content=DAG84whh_6Y&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hce401a2960"
+    url: "https://www.canva.com/design/DAG84whh_6Y/cdp-xDLmqDULwhEwbjcD7g/view?utm_content=DAG84whh_6Y&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hce401a2960",
+    isIASC: true // Indikator khusus untuk logo
   },
   {
     title: "Studi Kasus Sistem Pembayaran Digital di Indonesia",
@@ -52,7 +52,16 @@ const InfografisSection = () => {
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-sky-primary/10 flex items-center justify-center group-hover:bg-sky-primary/20 transition-colors">
-                  <FileText className="w-6 h-6 text-sky-primary" />
+                  {/* Kondisi: Tampilkan logo hanya untuk item IASC */}
+                  {item.isIASC ? (
+                    <img 
+                      src={iascLogo} 
+                      alt="IASC Logo" 
+                      className="w-8 h-8 object-contain" 
+                    />
+                  ) : (
+                    <FileText className="w-6 h-6 text-sky-primary" />
+                  )}
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-lg font-semibold text-foreground mb-2 line-clamp-2 group-hover:text-sky-primary transition-colors">
