@@ -8,8 +8,8 @@ import { Video, Play } from 'lucide-react';
 // =====================================================
 const edukasiVideos = [
   {
-    title: "Belajar Dasar Fintech",
-    youtubeUrl: "https://youtu.be/YUffxvvLfgM?si=q0dW1_7vnbjR7VPf",
+    title: "Aplikasi FinSky - Belajar Fintech dengan Cara Menyenangkan",
+    youtubeUrl: "https://youtu.be/N-VTNUEJ20E?si=s93a1w9nueRfHODK",
   },
 ];
 
