@@ -11,7 +11,7 @@ const quizItems = [
   {
     title: "Kuis Investasi Pemula",
     description: "Tantang dirimu dengan pertanyaan seputar investasi untuk pemula.",
-    url: "https://quizizz.com/admin/quiz/aaaaaaaa",
+    url: "https://wayground.com/join?gc=159713&source=liveDashboard",
   },
 ];
 
