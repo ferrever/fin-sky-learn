@@ -11,12 +11,12 @@ const infografisItems = [
   {
     title: "Technologi Finansial Untuk Pembayaran",
     description: "Pemahaman dasar mengenai teknologi finansial untuk pembayaran di Indonesia.",
-    url: "https://www.canva.com/design/DAG8VfN7-pY/b1nabtLH9cmNV0PJKSHyNQ/view?utm_content=DAG8VfN7-pY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h247b749fcb"
+    url: "https://https://www.canva.com/design/DAG846HTvcU/G6ePIVyeczMFbcUkwc5jdg/view?utm_content=DAG846HTvcU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2fd6d55c62"
   },
   {
-    title: "Era Perkembangan Digital Payment di Indonesia",
-    description: "Berisi 3 era perkembangan sistem pembayaran digital.",
-    url: "https://www.canva.com/design/DAG8VYfLSXc/E1HtriLhE7ntbX3iqFTTNg/view?utm_content=DAG8VYfLSXc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9a8d4595aa"
+    title: "Pengenalan Indonesia Anti-Scam Centre (IASC)",
+    description: "IASC adalah pusat koordinasi nasional yang menangani laporan penipuan transaksi keuangan secara cepat dan terintegrasi.",
+    url: "https://www.canva.com/design/DAG84whh_6Y/cdp-xDLmqDULwhEwbjcD7g/view?utm_content=DAG84whh_6Y&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hce401a2960"
   },
   {
     title: "Studi Kasus Sistem Pembayaran Digital di Indonesia",
