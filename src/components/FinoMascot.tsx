@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { X, Lightbulb, Sparkles } from 'lucide-react';
 
-// Jika file ada di folder src/assets:
-// import mascotImage from '../assets/nama-file-kamu.png';
+// 1. Solusi Alternatif: Import file gambar secara langsung
+import mascotImage from '../assets/favicon.png';
 
 const tips = [
   "Mulai investasi sedini mungkin! Waktu adalah teman terbaikmu dalam menumbuhkan kekayaan.",
@@ -58,25 +58,26 @@ const FinoMascot = () => {
         </div>
       )}
 
-            {/* Mascot button */}
+      {/* Mascot button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="group relative w-20 h-20 md:w-24 md:h-24 bounce-soft transition-transform hover:scale-110"
       >
-        {/* Menggunakan path langsung ke folder public */}
+        {/* 2. Menggunakan variabel hasil import (mascotImage) */}
         <img 
-          src="/favicon.png" 
+          src={mascotImage} 
           alt="Fino Mascot"
           className="w-full h-full object-contain drop-shadow-md"
         />
 
         {/* Indikator kilauan (opsional) */}
         {!isOpen && (
-          <div className="absolute -top-1 -right-1 w-6 h-6 bg-sunshine rounded-full flex items-center justify-center pulse-glow">
+          <div className="absolute -top-1 -right-1 w-6 h-6 bg-sunshine rounded-full flex items-center justify-center pulse-glow shadow-lg">
             <Sparkles className="w-3 h-3 text-accent-foreground" />
           </div>
         )}
       </button>
+
       {/* Name tag */}
       <div className="text-xs font-semibold text-muted-foreground bg-card/80 px-2 py-0.5 rounded-full shadow-sm">
         Fino
