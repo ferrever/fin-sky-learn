@@ -5,13 +5,17 @@ import { Button } from './ui/button';
 // =====================================================
 // EDIT DATA KUIS DI SINI
 // Ganti title, description, dan url sesuai kebutuhan
-// URL harus berupa link Quizizz yang valid
 // =====================================================
 const quizItems = [
   {
+    title: "Kuis Fintech Dasar",
+    description: "Seberapa jauh kamu mengenal dasar fintech?.",
+    url: "https://wayground.com/join?gc=47405158&source=liveDashboard",
+  },
+  {
     title: "Kuis Investasi Pemula",
-    description: "Tantang dirimu dengan pertanyaan seputar investasi untuk pemula.",
-    url: "https://wayground.com/join?gc=159713&source=liveDashboard",
+    description: "Seberapa jauh kamu mengenal dunia investasi?",
+    url: "https://wayground.com/join?gc=55367782&source=liveDashboard", // Ganti dengan URL kuis kedua Anda
   },
 ];
 
@@ -39,12 +43,12 @@ const QuizSection = () => {
           </p>
         </div>
 
-        {/* Quiz Cards Grid */}
-        <div className="grid grid-cols-1 gap-6 max-w-4xl mx-auto">
+        {/* Quiz Cards Grid - Menggunakan grid-cols-1 dan md:grid-cols-2 agar rapi saat ada 2 kuis */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {quizItems.map((quiz, index) => (
             <div
               key={index}
-              className="group bg-background rounded-2xl border border-border/50 p-6 hover:shadow-card-hover hover:border-sunshine/30 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+              className="group bg-background rounded-2xl border border-border/50 p-6 hover:shadow-card-hover hover:border-sunshine/30 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden flex flex-col justify-between"
             >
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-sunshine/5 rounded-full -translate-y-1/2 translate-x-1/2" />
@@ -59,21 +63,24 @@ const QuizSection = () => {
                     <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-sunshine transition-colors">
                       {quiz.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-4">
+                    <p className="text-muted-foreground text-sm mb-6">
                       {quiz.description}
                     </p>
-                    <Button
-                      variant="sunshine"
-                      size="default"
-                      className="group/btn"
-                      onClick={() => window.open(quiz.url, '_blank')}
-                    >
-                      <Zap className="w-4 h-4 mr-2" />
-                      Mulai Kuis
-                      <ExternalLink className="w-3 h-3 ml-2 group-hover/btn:translate-x-0.5 transition-transform" />
-                    </Button>
                   </div>
                 </div>
+              </div>
+              
+              <div className="relative z-10 mt-auto pl-[72px]">
+                <Button
+                  variant="sunshine"
+                  size="default"
+                  className="group/btn w-full sm:w-auto"
+                  onClick={() => window.open(quiz.url, '_blank')}
+                >
+                  <Zap className="w-4 h-4 mr-2" />
+                  Mulai Kuis
+                  <ExternalLink className="w-3 h-3 ml-2 group-hover/btn:translate-x-0.5 transition-transform" />
+                </Button>
               </div>
             </div>
           ))}
