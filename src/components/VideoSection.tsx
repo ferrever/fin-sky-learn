@@ -4,12 +4,15 @@ import { Video, Play } from 'lucide-react';
 // =====================================================
 // EDIT DATA VIDEO DI SINI
 // Ganti title dan youtubeUrl sesuai kebutuhan
-// Format URL: https://www.youtube.com/watch?v=VIDEO_ID
 // =====================================================
 const edukasiVideos = [
   {
     title: "Aplikasi FinSky - Belajar Fintech dengan Cara Menyenangkan",
-    youtubeUrl: "https://youtu.be/N-VTNUEJ20E?si=s93a1w9nueRfHODK",
+    youtubeUrl: "https://youtu.be/N-VTNUEJ20E?si=myn1JEh76H7hyLxo",
+  },
+  {
+    title: "Finsky - Materi 1 Teknologi Finansial untuk Pembayaran",
+    youtubeUrl: "https://youtu.be/TOu_Sq13xMI", // Ganti dengan URL video kedua Anda
   },
 ];
 
@@ -41,14 +44,14 @@ const VideoSection = () => {
           </p>
         </div>
 
-        {/* Video Cards Grid */}
-        <div className="grid grid-cols-1 place-items-center">
+        {/* Video Cards Grid - Diubah menjadi grid-cols-1 dan md:grid-cols-2 agar tampil 2 kolom di desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {edukasiVideos.map((video, index) => {
             const videoId = getYouTubeVideoId(video.youtubeUrl);
             return (
               <div
                 key={index}
-                className="group bg-background rounded-2xl border border-border/50 overflow-hidden hover:shadow-card-hover hover:border-sunset/30 hover:-translate-y-1 transition-all duration-300 max-w-xl w-full mx-auto"
+                className="group bg-background rounded-2xl border border-border/50 overflow-hidden hover:shadow-card-hover hover:border-sunset/30 hover:-translate-y-1 transition-all duration-300 w-full"
               >
                 {/* YouTube Embed */}
                 <div className="relative aspect-video bg-muted">
@@ -58,7 +61,7 @@ const VideoSection = () => {
                       title={video.title}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
-                      className="absolute inset-0 w-full h-full"
+                      className="absolute inset-0 w-full h-full border-0"
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -70,7 +73,7 @@ const VideoSection = () => {
                 </div>
 
                 {/* Video Title */}
-                <div className="p-4">
+                <div className="p-5">
                   <h3 className="text-lg font-semibold text-foreground group-hover:text-sunset transition-colors line-clamp-2">
                     {video.title}
                   </h3>
