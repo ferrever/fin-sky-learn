@@ -3,7 +3,7 @@ import { Video, Play } from 'lucide-react';
 
 // =====================================================
 // EDIT DATA VIDEO DI SINI
-// Ganti title dan youtubeUrl sesuai kebutuhan
+// Data sudah ditambahkan menjadi 5 video
 // =====================================================
 const edukasiVideos = [
   {
@@ -12,7 +12,19 @@ const edukasiVideos = [
   },
   {
     title: "Finsky - Materi 1 Teknologi Finansial untuk Pembayaran",
-    youtubeUrl: "https://youtu.be/TOu_Sq13xMI", // Ganti dengan URL video kedua Anda
+    youtubeUrl: "https://youtu.be/TOu_Sq13xMI",
+  },
+  {
+    title: "Fintech Crowdfunding: Apa dan Bagaimana Cara Kerjanya?",
+    youtubeUrl: "https://youtu.be/voF1plqqZJA?si=_RA-IjQh0_wgF699",
+  },
+  {
+    title: "Mengenal Peer-to-Peer (P2P) Lending di Indonesia",
+    youtubeUrl: "https://youtu.be/g3YiXV0rPqs?si=-t5hnV6faZ5NHoxr",
+  },
+  {
+    title: "Cerdas Berinvestasi melalui Platform Fintech Investment",
+    youtubeUrl: "https://youtu.be/qIw-yFC-HNU?si=pf9DJOwR8_gDO4an",
   },
 ];
 
@@ -44,14 +56,14 @@ const VideoSection = () => {
           </p>
         </div>
 
-        {/* Video Cards Grid - Diubah menjadi grid-cols-1 dan md:grid-cols-2 agar tampil 2 kolom di desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {/* Video Cards Grid - Menggunakan grid 3 kolom pada layar besar (lg) agar lebih rapi */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {edukasiVideos.map((video, index) => {
             const videoId = getYouTubeVideoId(video.youtubeUrl);
             return (
               <div
                 key={index}
-                className="group bg-background rounded-2xl border border-border/50 overflow-hidden hover:shadow-card-hover hover:border-sunset/30 hover:-translate-y-1 transition-all duration-300 w-full"
+                className="group bg-background rounded-2xl border border-border/50 overflow-hidden hover:shadow-card-hover hover:border-sunset/30 hover:-translate-y-1 transition-all duration-300 w-full flex flex-col"
               >
                 {/* YouTube Embed */}
                 <div className="relative aspect-video bg-muted">
@@ -73,7 +85,7 @@ const VideoSection = () => {
                 </div>
 
                 {/* Video Title */}
-                <div className="p-5">
+                <div className="p-5 flex-1">
                   <h3 className="text-lg font-semibold text-foreground group-hover:text-sunset transition-colors line-clamp-2">
                     {video.title}
                   </h3>
