@@ -22,20 +22,15 @@ const infografisItems = [
     description: "Studi kasus tentang gopay dan qris pada sistem pembayaran digital.",
     url: "https://www.canva.com/design/DAG8VY45ZIc/Ey8gYvTJ_lprAn1CHGM0Og/view?utm_content=DAG8VY45ZIc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6f3695000b"
   },
-  // PENAMBAHAN 2 LINK BARU
   {
     title: "Jenis Jenis Fintech",
     description: "Menelusuri beberapa jenis fintech di Indonesia.",
     url: "https://www.canva.com/design/DAG9Bk3dOj4/kruYeRYRlNkGyhf-ChEIaA/view?utm_content=DAG9Bk3dOj4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h17b4ab70b0
-
-Infografis Jenis-Jenis Fintech" // Ganti dengan link Canva ke-4 Anda
   },
   {
     title: "Keamanan dan Privasi Digital Fintech",
     description: "Technologi pasti sangat berurusan dengan tidak kriminal pencurian data pribadi, berikut regulasi keamanan fintech.",
     url: "https://www.canva.com/design/DAG9B5NV3kU/WtC7Cc2JThHWD9YszmyluQ/view?utm_content=DAG9B5NV3kU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb256183253
-
-Inforgrafis Kemanan dan Privasi Digital" // Ganti dengan link Canva ke-5 Anda
   },
 ];
 
