@@ -20,7 +20,7 @@ const Index = () => {
           name="description" 
           content="Platform edukasi fintech terdepan untuk meningkatkan literasi keuangan digital masyarakat Indonesia. Belajar investasi, fintech, dan keuangan digital dengan mudah dan menyenangkan." 
         />
-        <meta name="keywords" content="fintech, edukasi keuangan, literasi keuangan, investasi, belajar fintech, keuangan digital" />
+        <meta name="keywords" content="fintech, edukasi keuangan, IASC, investasi, belajar fintech, keuangan digital" />
       </Helmet>
 
       <div className="relative min-h-screen overflow-x-hidden">
