@@ -25,12 +25,12 @@ const infografisItems = [
   {
     title: "Jenis Jenis Fintech",
     description: "Menelusuri beberapa jenis fintech di Indonesia.",
-    url: "https://www.canva.com/design/DAG9Bk3dOj4/kruYeRYRlNkGyhf-ChEIaA/view?utm_content=DAG9Bk3dOj4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h17b4ab70b0
+    url: "https://www.canva.com/design/DAG9Bk3dOj4/kruYeRYRlNkGyhf-ChEIaA/view?utm_content=DAG9Bk3dOj4&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h17b4ab70b0"
   },
   {
     title: "Keamanan dan Privasi Digital Fintech",
-    description: "Technologi pasti sangat berurusan dengan tidak kriminal pencurian data pribadi, berikut regulasi keamanan fintech.",
-    url: "https://www.canva.com/design/DAG9B5NV3kU/WtC7Cc2JThHWD9YszmyluQ/view?utm_content=DAG9B5NV3kU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb256183253
+    description: "Teknologi pasti sangat berurusan dengan tindak kriminal pencurian data pribadi, berikut regulasi keamanan fintech.",
+    url: "https://www.canva.com/design/DAG9B5NV3kU/WtC7Cc2JThHWD9YszmyluQ/view?utm_content=DAG9B5NV3kU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb256183253"
   },
 ];
 
