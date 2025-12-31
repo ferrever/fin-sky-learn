@@ -258,7 +258,199 @@ const ArticlePage = () => {
         </div>
       </div>
       )
-    }
+    },
+    {
+    title: "Mengenal Jenis-Jenis Fintech, Manfaat, dan Contoh Perusahaannya",
+    icon: <TrendingUp className="w-12 h-12 text-blue-600" />, // Gunakan ikon yang relevan
+    content: (
+      <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
+        <p>
+          Perkembangan teknologi digital telah membawa perubahan besar dalam industri keuangan. Salah satu inovasi paling berpengaruh adalah <strong>Financial Technology (Fintech)</strong>. Kehadiran fintech membuat layanan keuangan menjadi lebih cepat, praktis, dan mudah diakses oleh berbagai lapisan masyarakat.
+        </p>
+        <h2 className="text-2xl font-bold text-foreground mt-8">Apa Itu Fintech?</h2>
+        <p>
+          Fintech adalah inovasi layanan keuangan yang memanfaatkan teknologi digital untuk meningkatkan efisiensi, kenyamanan, dan aksesibilitas dalam aktivitas keuangan. Berbeda dengan sistem konvensional, fintech memungkinkan transaksi kapan saja melalui smartphone.
+        </p>
+
+        <h2 className="text-2xl font-bold text-foreground mt-8">Jenis-Jenis Fintech yang Perlu Diketahui</h2>
+        
+        <div className="grid gap-6 mt-4">
+          {/* 1. Digital Payment */}
+          <section className="p-5 bg-card border rounded-2xl shadow-sm">
+            <h3 className="text-xl font-bold text-foreground mb-2">1. Pembayaran Digital (E-Wallet)</h3>
+            <p className="text-sm">Berfokus pada layanan non-tunai. Contoh: <strong>GoPay, OVO, DANA, ShopeePay.</strong></p>
+          </section>
+
+          {/* 2. P2P Lending */}
+          <section className="p-5 bg-card border rounded-2xl shadow-sm">
+            <h3 className="text-xl font-bold text-foreground mb-2">2. Peer-to-Peer (P2P) Lending</h3>
+            <p className="text-sm">Mempertemukan pemberi dana dan peminjam secara langsung. Contoh: <strong>KoinWorks, Investree, Amartha.</strong></p>
+          </section>
+
+          {/* 3. Crowdfunding */}
+          <section className="p-5 bg-card border rounded-2xl shadow-sm">
+            <h3 className="text-xl font-bold text-foreground mb-2">3. Crowdfunding</h3>
+            <p className="text-sm">Penggalangan dana kolektif untuk sosial atau bisnis. Contoh: <strong>Kitabisa, Bizhare.</strong></p>
+          </section>
+
+          {/* 4. Investasi Digital */}
+          <section className="p-5 bg-card border rounded-2xl shadow-sm">
+            <h3 className="text-xl font-bold text-foreground mb-2">4. Investasi & Wealth Management</h3>
+            <p className="text-sm">Mengelola portofolio investasi secara digital. Contoh: <strong>Bibit, Ajaib, Bareksa.</strong></p>
+          </section>
+
+          {/* 5. Bank Digital */}
+          <section className="p-5 bg-card border rounded-2xl shadow-sm">
+            <h3 className="text-xl font-bold text-foreground mb-2">5. Bank Digital (Neobank)</h3>
+            <p className="text-sm">Bank tanpa kantor fisik, operasi 100% online. Contoh: <strong>Jenius, Bank Jago, SeaBank.</strong></p>
+          </section>
+        </div>
+
+        <h2 className="text-2xl font-bold text-foreground mt-8">Manfaat Fintech bagi Masyarakat</h2>
+        <ul className="list-disc pl-6 space-y-3">
+          <li><strong>Kemudahan Akses:</strong> Layanan keuangan tanpa batasan lokasi.</li>
+          <li><strong>Efisiensi:</strong> Transaksi lebih cepat dengan biaya lebih rendah.</li>
+          <li><strong>Inklusi Keuangan:</strong> Menjangkau masyarakat yang belum tersentuh perbankan (unbanked).</li>
+          <li><strong>Keamanan:</strong> Dilengkapi sistem enkripsi dan pengawasan OJK.</li>
+        </ul>
+
+        <div className="bg-sky-primary/5 p-6 rounded-2xl border border-sky-primary/20 mt-8">
+          <h3 className="text-lg font-bold text-sky-deep mb-2">Kesimpulan</h3>
+          <p className="text-sm italic">
+            Fintech mendorong transformasi keuangan yang lebih inklusif. Sebagai pengguna, pastikan selalu memilih platform yang <strong>terdaftar dan diawasi oleh OJK</strong> untuk keamanan transaksi Anda.
+          </p>
+        </div>
+      </div>
+      )
+    },
+    {
+      title: "Keamanan dan Privasi Data: Pentingnya Melindungi Informasi Pribadi di Era Digital",
+      icon: <ShieldCheck className="w-12 h-12 text-red-600" />, 
+      content: (
+        <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
+          <p>
+            Di era digital saat ini, data menjadi aset yang sangat berharga. Setiap aktivitas online—mulai dari media sosial hingga transaksi keuangan—melibatkan pertukaran data pribadi. Oleh karena itu, keamanan dan privasi data menjadi isu penting yang harus dipahami.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4 my-8">
+            <div className="p-6 bg-blue-50 border border-blue-100 rounded-2xl">
+              <h3 className="font-bold text-blue-900 mb-2">Keamanan Data</h3>
+              <p className="text-sm">Upaya melindungi data dari akses tidak sah, pencurian, atau kebocoran secara digital maupun fisik.</p>
+            </div>
+            <div className="p-6 bg-green-50 border border-green-100 rounded-2xl">
+              <h3 className="font-bold text-green-900 mb-2">Privasi Data</h3>
+              <p className="text-sm">Hak individu untuk mengontrol bagaimana data pribadinya dikumpulkan, digunakan, dan dibagikan.</p>
+            </div>
+          </div>
+
+          <h2 className="text-2xl font-bold text-foreground mt-8">Jenis Data yang Wajib Dilindungi</h2>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 list-none pl-0">
+            <li className="flex items-center gap-2">🔑 Data Login (PIN, OTP, Password)</li>
+            <li className="flex items-center gap-2">💳 Data Finansial (No. Rekening, Kartu)</li>
+            <li className="flex items-center gap-2">🆔 Data Identitas (NIK, Alamat)</li>
+            <li className="flex items-center gap-2">📍 Data Aktivitas (Lokasi, Riwayat)</li>
+          </ul>
+
+          <h2 className="text-2xl font-bold text-foreground mt-8">Ancaman Digital yang Sering Terjadi</h2>
+          <div className="space-y-4">
+            <div className="flex gap-4 p-4 border-l-4 border-red-500 bg-red-50/30">
+              <div>
+                <h4 className="font-bold text-red-700">Phishing</h4>
+                <p className="text-sm">Penipuan menyamar sebagai pihak resmi untuk mencuri data sensitif melalui link palsu.</p>
+              </div>
+            </div>
+            <div className="flex gap-4 p-4 border-l-4 border-red-500 bg-red-50/30">
+              <div>
+                <h4 className="font-bold text-red-700">Malware & Ransomware</h4>
+                <p className="text-sm">Perangkat lunak berbahaya yang merusak atau mengunci data untuk meminta tebusan.</p>
+              </div>
+            </div>
+          </div>
+
+          <h2 className="text-2xl font-bold text-foreground mt-8">Langkah Proteksi Mandiri</h2>
+          <ol className="list-decimal pl-6 space-y-3">
+            <li><strong>Password Unik:</strong> Gunakan kombinasi karakter yang sulit ditebak.</li>
+            <li><strong>Aktifkan 2FA:</strong> Lapisan keamanan ganda adalah wajib.</li>
+            <li><strong>Hindari Wi-Fi Publik:</strong> Jangan bertransaksi keuangan di jaringan terbuka.</li>
+            <li><strong>Update Berkala:</strong> Pembaruan aplikasi biasanya membawa patch keamanan terbaru.</li>
+          </ol>
+
+          <div className="mt-12 p-6 bg-card border rounded-2xl shadow-inner italic text-center">
+            "Keamanan data bukan hanya tanggung jawab teknologi, tetapi juga kebiasaan pengguna."
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Regulasi dan Perlindungan Fintech di Indonesia: Peran OJK dan BI",
+      icon: <ShieldCheck className="w-12 h-12 text-blue-800" />, 
+      content: (
+        <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
+          <p>
+            Perkembangan <em>financial technology</em> (fintech) di Indonesia tumbuh sangat pesat. Namun, di balik kemudahan tersebut, muncul risiko seperti penipuan dan fintech ilegal. Oleh karena itu, regulasi menjadi aspek penting untuk menjaga keamanan pengguna dan stabilitas sistem keuangan.
+          </p>
+
+          <h2 className="text-2xl font-bold text-foreground mt-8">Lembaga Pengawas Fintech di Indonesia</h2>
+          
+          <div className="grid md:grid-cols-2 gap-6 mt-4">
+            {/* Peran OJK */}
+            <div className="p-6 bg-amber-50 border border-amber-200 rounded-2xl shadow-sm">
+              <div className="font-bold text-amber-900 text-xl mb-3 flex items-center gap-2">
+                🏛️ OJK
+              </div>
+              <p className="text-sm font-semibold text-amber-800 mb-2">Otoritas Jasa Keuangan</p>
+              <ul className="text-sm space-y-2 text-amber-900/80">
+                <li>• Mengawasi Fintech Lending (P2P)</li>
+                <li>• Menetapkan perizinan resmi</li>
+                <li>• Melindungi konsumen dari pinjol ilegal</li>
+              </ul>
+            </div>
+
+            {/* Peran BI */}
+            <div className="p-6 bg-red-50 border border-red-200 rounded-2xl shadow-sm">
+              <div className="font-bold text-red-900 text-xl mb-3 flex items-center gap-2">
+                🏦 Bank Indonesia
+              </div>
+              <p className="text-sm font-semibold text-red-800 mb-2">Bank Sentral</p>
+              <ul className="text-sm space-y-2 text-red-900/80">
+                <li>• Mengatur sistem pembayaran digital</li>
+                <li>• Mengawasi QRIS & Payment Gateway</li>
+                <li>• Menjaga stabilitas nilai Rupiah digital</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2 className="text-2xl font-bold text-foreground mt-8">Bentuk Perlindungan Konsumen</h2>
+          <div className="space-y-4">
+            <div className="p-4 bg-card border rounded-xl flex items-start gap-3">
+              <span className="text-green-600 font-bold">✓</span>
+              <p className="text-sm"><strong>Transparansi Informasi:</strong> Fintech wajib menyampaikan biaya dan risiko secara jujur.</p>
+            </div>
+            <div className="p-4 bg-card border rounded-xl flex items-start gap-3">
+              <span className="text-green-600 font-bold">✓</span>
+              <p className="text-sm"><strong>Batasan Bunga:</strong> Regulator menetapkan batas bunga maksimal agar tidak memberatkan.</p>
+            </div>
+            <div className="p-4 bg-card border rounded-xl flex items-start gap-3">
+              <span className="text-green-600 font-bold">✓</span>
+              <p className="text-sm"><strong>Kerahasiaan Data:</strong> Larangan penyalahgunaan data pribadi tanpa izin pengguna.</p>
+            </div>
+          </div>
+
+          <h2 className="text-2xl font-bold text-foreground mt-8">Tips Aman bagi Pengguna</h2>
+          <div className="bg-sky-primary/5 p-6 rounded-2xl border border-sky-primary/10">
+            <ul className="space-y-3">
+              <li className="flex items-center gap-2">✅ Cek status izin di website <a href="https://www.ojk.go.id" className="text-sky-deep underline">ojk.go.id</a></li>
+              <li className="flex items-center gap-2">✅ Gunakan layanan sesuai kemampuan finansial</li>
+              <li className="flex items-center gap-2">✅ Jangan memberikan akses kontak atau galeri pada aplikasi pinjaman</li>
+            </ul>
+          </div>
+
+          <p className="mt-8">
+            Dengan pengawasan ketat dari OJK dan BI, diharapkan ekosistem fintech di Indonesia dapat tumbuh secara sehat dan memberikan manfaat maksimal bagi inklusi keuangan nasional.
+          </p>
+        </div>
+      )
+    },
   ];
   const article = articles[Number(id)];
 
