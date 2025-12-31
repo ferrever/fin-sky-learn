@@ -16,6 +16,18 @@ const fintechArticles = [
     title: "Mengenal Investasi Digital untuk Pemula",
     description: "Langkah awal memulai investasi aman di era digital, mulai dari reksa dana hingga emas digital.",
   },
+  {
+    title: "Mengenal Jenis-Jenis Fintech, Manfaat, dan Contoh Perusahaannya",
+    description: "Panduan lengkap mengenai klasifikasi fintech mulai dari pembayaran digital, P2P lending, hingga bank digital.",
+  },
+  {
+    title: "Keamanan dan Privasi Data: Pentingnya Melindungi Informasi Pribadi",
+    description: "Pahami perbedaan keamanan dan privasi data serta langkah konkret melindungi identitas digital Anda dari ancaman siber.",
+  },
+  {
+    title: "Regulasi dan Perlindungan Fintech: Peran OJK dan BI",
+    description: "Kenali lembaga pengawas fintech di Indonesia dan bagaimana regulasi melindungi Anda dari praktik fintech ilegal.",
+  },
 ];
 
 const ArticleSection = () => {
